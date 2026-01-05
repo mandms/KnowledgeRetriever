@@ -1,3 +1,4 @@
+using DocumentSearch;
 
 namespace WebAPI
 {
@@ -12,6 +13,7 @@ namespace WebAPI
 
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddDocumentSearch();
 
             var app = builder.Build();
 

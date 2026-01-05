@@ -14,7 +14,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet(Name = "DocumentsSeacrh")]
-        public List<string> Get()
+        public async Task<List<string>> Get()
         {
             return [];
         }

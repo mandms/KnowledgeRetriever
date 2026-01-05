@@ -1,0 +1,16 @@
+backend: llama-cpp
+description: Imported from https://huggingface.co/TheBloke/phi-2-GGUF/resolve/main/phi-2.Q4_0.gguf
+function:
+    grammar:
+        disable: true
+known_usecases:
+    - chat
+name: phi-2.Q4_0.gguf
+options:
+    - use_jinja:true
+parameters:
+    model: phi-2.Q4_0.gguf
+    threads: 4
+    batch: 650
+template:
+    use_tokenizer_template: true
