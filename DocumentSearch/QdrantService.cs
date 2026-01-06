@@ -9,7 +9,7 @@ namespace DocumentSearch
 
         public async Task<IReadOnlyList<ScoredPoint>> SearchAsync(
             float[] vector,
-            int limit = 5)
+            int limit = 25)
         {
             return await qdrantClient.SearchAsync(
                 collectionName: CollectionName,

@@ -1,22 +1,19 @@
+using DocumentSearch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class DocumentSearchController : ControllerBase
+    public class DocumentSearchController(ILogger<DocumentSearchController> logger, ISearch search) : ControllerBase
     {
-        private readonly ILogger<DocumentSearchController> _logger;
-
-        public DocumentSearchController(ILogger<DocumentSearchController> logger)
-        {
-            _logger = logger;
-        }
 
         [HttpGet(Name = "DocumentsSeacrh")]
-        public async Task<List<string>> Get()
+        public async Task<string> SearchAsync([FromQuery] string searchText)
         {
-            return [];
+            var result = await search.Process(searchText);
+
+            return result;
         }
     }
 }
